@@ -55,13 +55,12 @@ type JUnitProperty struct {
 type JUnitFailure struct {
 	Message  string `xml:"message,attr"`
 	Type     string `xml:"type,attr"`
-	Contents string `xml:",chardata,innerxml"`
+	Contents string `xml:",innerxml"`
 }
 
 // JUnitReportXML writes a JUnit xml representation of the given report to w
 // in the format described at http://windyroad.org/dl/Open%20Source/JUnit.xsd
 func JUnitReportXML(report *parser.Report, noXMLHeader bool, goVersion string, w io.Writer) error {
-	fmt.Println("teste")
 	suites := JUnitTestSuites{}
 
 	// convert Report to JUnit test suites
