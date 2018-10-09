@@ -55,7 +55,7 @@ type JUnitProperty struct {
 type JUnitFailure struct {
 	Message  string `xml:"message,attr"`
 	Type     string `xml:"type,attr"`
-	Contents string `xml:",chardata"`
+	Contents string `xml:",chardata,innerxml"`
 }
 
 // JUnitReportXML writes a JUnit xml representation of the given report to w
